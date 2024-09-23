@@ -80,6 +80,8 @@ async function deletePost() {
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/main.scss';
+
 img {
     object-fit: cover;
     object-position: center;

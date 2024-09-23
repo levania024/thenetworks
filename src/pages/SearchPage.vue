@@ -23,13 +23,13 @@ async function getAds() {
 
 <template>
     <section class="row">
-        <div v-for="post in posts" :key="post.id" class="col-12 my-3">
+        <div v-for="post in posts" :key="post.id" class="my-3 col-8">
             <PostCard :postProps="post" />
-         </div>
-     </section>
+        </div>
+    </section>
 </template>
 
 
 <style lang="scss" scoped>
-
+@import '@/assets/scss/main.scss';
 </style>

@@ -25,23 +25,17 @@ async function getAds() {
 </script>
 
 <template>
-    <div>
-     <img :src="adProps.tall" :alt="adProps.title">
+    <div class="col-4">
+        <img :src="adProps.tall" :alt="adProps.title" class="ad-img">
         <p>{{ adProps.description }}</p>
     </div>
 </template>
 
-<style scoped>
-.ads-container {
-    position: sticky;
-    top: 0; 
-}
+<style scoped lang="scss">
+@import '@/assets/scss/main.scss';
 
-.ad-card {
-    background-color: #f8f9fa; 
-    border: 1px solid #dee2e6;
-    border-radius: 5px; 
-    padding: 10px; 
+.ad-img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 50dvh;
 }
 </style>

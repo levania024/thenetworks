@@ -14,7 +14,7 @@ const route = useRoute();
 const profileId = computed(() => route.params.profileId);
 const posts = computed(() => AppState.posts);
 
-onUnmounted(()=>{
+onUnmounted(() => {
     postsService.clearProfile()
 })
 
@@ -35,7 +35,7 @@ async function getProfileById() {
 
 async function getPostsByCreatorId() {
     try {
-        await postsService.getPostsByCreatorId(profileId.value); 
+        await postsService.getPostsByCreatorId(profileId.value);
     } catch (error) {
         Pop.error(error);
     }
@@ -53,19 +53,23 @@ async function getAds() {
 <template>
     <div class="container">
         <section class="row">
-            <ProfileDetails />
+            <div class="col-8">
+                <ProfileDetails />
+            </div>
         </section>
         <section class="row">
-            <div v-for="post in posts" :key="post.id" class="col-12 my-3">
+            <div v-for="post in posts" :key="post.id" class="my-3 col-8">
                 <PostCard :postProps="post" />
             </div>
         </section>
         <section class="row">
-            <PageNavigation />
+            <div class="col-8">
+                <PageNavigation />
+            </div>
         </section>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
+@import '@/assets/scss/main.scss';
 </style>

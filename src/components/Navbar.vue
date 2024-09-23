@@ -18,11 +18,14 @@ function toggleTheme() {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-info px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="45" />
+        <img alt="logo"
+          src="https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          height="50" />
       </div>
+      <p class="mx-3 fs-4">Networks</p>
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +41,7 @@ function toggleTheme() {
         </button>
       </div>
       <div>
-        <ProfileSearchResult/>
+        <ProfileSearchResult />
       </div>
     </div>
   </nav>

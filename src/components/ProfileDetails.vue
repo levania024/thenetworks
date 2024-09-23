@@ -26,9 +26,9 @@ async function getProfileById() {
 </script>
 
 <template>
-    <div class="my-3" v-if="profiles" :style="{ backgroundImage: `url(${profiles.coverImg})` }">
+    <div v-if="profiles" :style="{ backgroundImage: `url(${profiles.coverImg})` }">
         <div class="text-black d-flex flex-column my-3">
-            <div class="d-flex align-items-center">
+            <div class="d-flex justify-content-center align-items-end m-3">
                 <div class="flex-grow-1">
                     <img :src="profiles.picture" class="creator-img" :alt="profiles.name">
                 </div>
@@ -44,13 +44,12 @@ async function getProfileById() {
                     </a>
                 </div>
             </div>
-            <div class="d-flex flex-column mt-3">
+            <div class="d-flex flex-column m-3">
                 <p v-if="profiles.graduated"><i class="mdi mdi-account-school fs-2"></i></p>
                 <h5>Class of: {{ profiles.class }}</h5>
                 <h3>{{ profiles.name }}</h3>
                 <p>{{ profiles.bio }}</p>
                 <div class="text-end">
-                    <button class="btn btn-primary">Edit</button>
                 </div>
             </div>
         </div>
@@ -58,9 +57,18 @@ async function getProfileById() {
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/main.scss';
+
+P {
+    margin: 0%;
+    padding: 0%;
+}
+
 .creator-img {
     height: 15dvh;
     aspect-ratio: 1/1;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 </style>

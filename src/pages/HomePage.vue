@@ -12,43 +12,47 @@ const posts = computed(() => AppState.posts);
 const ads = computed(() => AppState.ads);
 
 onMounted(() => {
-    getPosts();
-    getAds();
+  getPosts();
+  getAds();
 });
 
 async function getPosts() {
-    try {
-        await postsService.getPost();
-    } catch (error) {
-        Pop.meow(error);
-    }
+  try {
+    await postsService.getPost();
+  } catch (error) {
+    Pop.meow(error);
+  }
 }
 
 async function getAds() {
-    try {
-        await adsService.getAds();
-    } catch (error) {
-        Pop.meow(error);
-    }
+  try {
+    await adsService.getAds();
+  } catch (error) {
+    Pop.meow(error);
+  }
 }
 </script>
 
 <template>
   <div class="container">
     <section class="row">
-      <div class="col-12 my-3">
+      <div class="my-3 col-8">
         <PostForm />
       </div>
     </section>
     <section class="row">
-      <div v-for="post in posts" :key="post.id" class="col-12 my-3">
+      <div v-for="post in posts" :key="post.id" class="my-3 col-8">
         <PostCard :postProps="post" />
       </div>
     </section>
     <section class="row">
-      <PageNavigation />
+      <div class="my-3 col-8">
+        <PageNavigation />
+      </div>
     </section>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@import '@/assets/scss/main.scss';
+</style>

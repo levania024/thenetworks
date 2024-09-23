@@ -5,7 +5,7 @@ import { AppState } from "@/AppState.js"
 
 class PostsService{
     async changeProfilePage(PageNum, postPageNum) {
-        const response = await api.get(`api/profiles?page=${PageNum}&query=${postPageNum}`)
+        const response = await api.get(`/api/posts=${postPageNum}&page=${PageNum}`)
         logger.log(response.data);
         this.handleResponseData(response.data)
     }
@@ -22,13 +22,7 @@ class PostsService{
         const postIndex = AppState.posts.findIndex(post => post.id == postId)
         AppState.posts.splice(postIndex, 1)
     }
-    async getProjectsByCreatorId(profileId) {
-        AppState.posts = []
-        const response = await api.get(`api/posts?query=${profileId}`)
-        const newProjects = response.data.posts.map(postPOJO => new Post(postPOJO))
-        AppState.posts = newProjects
-    }
-    
+   
     async createPost(formDate) {
         const response = await api.post('/api/posts', formDate)
         logger.log('created a post', response.data)

@@ -27,13 +27,15 @@ async function changePage(PageNum) {
     <button @click="changePage(currentPage - 1)" :disabled="currentPage < 2" class="btn btn-outline-primary">
       Newer
     </button>
-    <button @click="changePage(currentPage + 1)" :disabled="currentPage == 41 || currentPage == totalPages"
+    <button @click="changePage(currentPage + 1)" :disabled="currentPage == 40 || currentPage == totalPages"
       class="btn btn-outline-primary">
-     Older
+      Older
     </button>
   </div>
 </template>
 
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '@/assets/scss/main.scss';
+</style>

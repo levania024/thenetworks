@@ -4,10 +4,10 @@ import { AppState } from "@/AppState.js"
 import { Account } from "@/models/Account.js"
 
 class ProfilesService{
-  async searchProfiles(value) {
-      const response = await api.get(`/api/profiles?query=${value}`)
-      logger.log('show profile',response.data)
-   }
+//   async searchProfiles(value) {
+//       const response = await api.get(`/api/profiles?query=${value}`)
+//       logger.log('show profile',response.data)
+//    }
    
    async getProfileById(profileId) {
         const response = await api.get(`/api/profiles/${profileId}`)
