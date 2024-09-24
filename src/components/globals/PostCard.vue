@@ -7,8 +7,6 @@ import Pop from '@/utils/Pop.js';
 import { computed, ref } from 'vue';
 
 const account = computed(() => AppState.account)
-// const profiles = computed(() => AppState.activeProfile);
-
 
 const prop = defineProps({
     postProps: { type: Post, required: true }

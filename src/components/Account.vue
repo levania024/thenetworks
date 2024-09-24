@@ -24,7 +24,7 @@ onMounted(() => {
 async function updateAccount() {
   try {
     await accountService.updateAccount(editableAccountData.value)
-    Pop.success("Changes saved!")
+    Pop.success("Changes saved")
   } catch (error) {
     Pop.meow(error)
     logger.error(error)
